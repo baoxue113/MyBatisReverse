@@ -2,7 +2,7 @@ package main.java.mybatis.model;
 
 import java.util.Date;
 
-public class QhbInf {
+public class HbUserInfo {
     private Integer id;
 
     private Integer userId;

@@ -49,8 +49,8 @@
             <property name="enableSubPackages" value="false" />
         </javaClientGenerator>
         <!-- 指定数据库表 -->
-        <table tableName="hb_balance"></table>
-        <table tableName="qhb_inf"></table>
+        <table tableName="hb_info"></table>
+        <table tableName="hb_user_info"></table>
         
         <!-- 有些表的字段需要指定java类型
          <table schema="" tableName="">

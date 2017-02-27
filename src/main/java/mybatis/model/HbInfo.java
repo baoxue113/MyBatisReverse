@@ -1,11 +1,13 @@
 package main.java.mybatis.model;
 
-public class HbBalance {
+public class HbInfo {
     private Integer id;
 
     private String hbNo;
 
     private Double hbBalance;
+
+    private Double hbSize;
 
     public Integer getId() {
         return id;
@@ -29,5 +31,13 @@ public class HbBalance {
 
     public void setHbBalance(Double hbBalance) {
         this.hbBalance = hbBalance;
+    }
+
+    public Double getHbSize() {
+        return hbSize;
+    }
+
+    public void setHbSize(Double hbSize) {
+        this.hbSize = hbSize;
     }
 }
