@@ -4,7 +4,8 @@
   "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
 
 <generatorConfiguration>
-    <context id="testTables" targetRuntime="MyBatis3">
+    <!-- <context id="testTables" targetRuntime="MyBatis3"> -->
+    <context id="testTables" targetRuntime="MyBatis3Simple">
         <commentGenerator>
             <!-- 是否去除自动生成的注释 true：是 ： false:否 -->
             <property name="suppressAllComments" value="true" />
