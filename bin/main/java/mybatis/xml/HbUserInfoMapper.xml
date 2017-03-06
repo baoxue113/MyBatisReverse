@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="main.java.mybatis.mapper.HbUserInfoMapper" >
+  <resultMap id="BaseResultMap" type="main.java.mybatis.model.HbUserInfo" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="user_id" property="userId" jdbcType="INTEGER" />
+    <result column="user_ip" property="userIp" jdbcType="VARCHAR" />
+    <result column="qhb_time" property="qhbTime" jdbcType="TIMESTAMP" />
+    <result column="money" property="money" jdbcType="DOUBLE" />
+  </resultMap>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from hb_user_info
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="main.java.mybatis.model.HbUserInfo" >
+    insert into hb_user_info (id, user_id, user_ip, 
+      qhb_time, money)
+    values (#{id,jdbcType=INTEGER}, #{userId,jdbcType=INTEGER}, #{userIp,jdbcType=VARCHAR}, 
+      #{qhbTime,jdbcType=TIMESTAMP}, #{money,jdbcType=DOUBLE})
+  </insert>
+  <update id="updateByPrimaryKey" parameterType="main.java.mybatis.model.HbUserInfo" >
+    update hb_user_info
+    set user_id = #{userId,jdbcType=INTEGER},
+      user_ip = #{userIp,jdbcType=VARCHAR},
+      qhb_time = #{qhbTime,jdbcType=TIMESTAMP},
+      money = #{money,jdbcType=DOUBLE}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select id, user_id, user_ip, qhb_time, money
+    from hb_user_info
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <select id="selectAll" resultMap="BaseResultMap" >
+    select id, user_id, user_ip, qhb_time, money
+    from hb_user_info
+  </select>
+</mapper>

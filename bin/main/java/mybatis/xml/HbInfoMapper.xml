@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="main.java.mybatis.mapper.HbInfoMapper" >
+  <resultMap id="BaseResultMap" type="main.java.mybatis.model.HbInfo" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="hb_no" property="hbNo" jdbcType="VARCHAR" />
+    <result column="hb_balance" property="hbBalance" jdbcType="DOUBLE" />
+    <result column="hb_size" property="hbSize" jdbcType="DOUBLE" />
+  </resultMap>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from hb_info
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="main.java.mybatis.model.HbInfo" >
+    insert into hb_info (id, hb_no, hb_balance, 
+      hb_size)
+    values (#{id,jdbcType=INTEGER}, #{hbNo,jdbcType=VARCHAR}, #{hbBalance,jdbcType=DOUBLE}, 
+      #{hbSize,jdbcType=DOUBLE})
+  </insert>
+  <update id="updateByPrimaryKey" parameterType="main.java.mybatis.model.HbInfo" >
+    update hb_info
+    set hb_no = #{hbNo,jdbcType=VARCHAR},
+      hb_balance = #{hbBalance,jdbcType=DOUBLE},
+      hb_size = #{hbSize,jdbcType=DOUBLE}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select id, hb_no, hb_balance, hb_size
+    from hb_info
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <select id="selectAll" resultMap="BaseResultMap" >
+    select id, hb_no, hb_balance, hb_size
+    from hb_info
+  </select>
+</mapper>
